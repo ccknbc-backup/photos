@@ -1,0 +1,49 @@
+name: Compress Image
+
+on: 
+  schedule:
+    - cron: '50 15 * * *'
+  workflow_dispatch:
+    inputs:
+      name:
+        description: '手动压缩一次'
+        required: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: master
+
+    - name: Setup Node
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: "12.x"
+
+    - name: Catch
+      uses: actions/cache@v2.1.1
+      id: cache-dependencies
+      with:
+        path: node_modules
+        key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+
+    - name: Install Dependencies
+      if: steps.cache-dependencies.outputs.cache-hit != 'true'
+      run: |
+        npm install gulp gulp-imagemin
+
+    - name: Compress
+      run: |
+        gulp
+    
+    - name: Deploy
+      run: |
+        git config --global user.name "ccknbc"
+        git config --global user.email "ccknbc@qq.com"
+        git add -A
+        git commit -m "Compressed By Github Actions"
+        git push
