@@ -16,4 +16,6 @@
 
 然后由`Restyled`进行代码格式重置（图片也不需要了其实）
 
-最后由`PRValet`自动完成完成PR合并
+最后由我打标签后`PRValet`自动完成完成PR合并
+
+以后加入由`Github Actions`自动合并由机器人提交的`PR`
