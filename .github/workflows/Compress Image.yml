@@ -6,8 +6,10 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: '手动压缩一次'
+        description: '自己手动压缩一次'
         required: false
+    watch:
+    types: [started] #游客帮忙手动压缩一次，不用判断
 
 jobs:
   deploy:
@@ -44,6 +46,7 @@ jobs:
       run: |
         git config --global user.name "ccknbc"
         git config --global user.email "ccknbc@qq.com"
+        git init
         git add -A
         git commit -m "Compressed By Github Actions"
         git push
