@@ -16,7 +16,7 @@
 
 然后由`Restyled`进行代码格式重置（图片也不需要了其实）
 
-最后由`Mergify`自动合并`PR`
+最后由`Mergify`或`Github Actions`自动合并`PR`（比速度🚀）
 
 (或由我打标签后由`PRValet`自动完成完成`PR`合并）
 
