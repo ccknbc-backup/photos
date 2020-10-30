@@ -8,7 +8,7 @@ on:
       name:
         description: '自己手动压缩一次'
         required: false
-    watch:
+  watch:
     types: [started] #游客帮忙手动压缩一次，不用判断
 
 jobs:
