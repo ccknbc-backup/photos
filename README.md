@@ -19,5 +19,3 @@
 最后由`Mergify`或`Github Actions`自动合并`PR`（比速度🚀）
 
 (或由我打标签后由`PRValet`自动完成完成`PR`合并）
-
-以后加入由`Github Actions`自动合并由机器人提交的`PR`
