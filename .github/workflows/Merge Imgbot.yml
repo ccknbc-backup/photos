@@ -2,7 +2,6 @@ name: Merge Imgbot
 
 on:
   workflow_dispatch:
-  inputs:
     name:
       description: '手动合并测试'
       required: false
