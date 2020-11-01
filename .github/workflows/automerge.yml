@@ -25,7 +25,7 @@ jobs:
         uses: "pascalgn/automerge-action@v0.12.0"
         env:
           GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"
-          MERGE_FILTER_AUTHOR: "imgbot"
+          MERGE_FILTER_AUTHOR: "imgbotapp"
           MERGE_LABELS: ""
           MERGE_FORKS: "false"
           MERGE_DELETE_BRANCH: "true"
