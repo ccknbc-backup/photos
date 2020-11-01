@@ -3,7 +3,6 @@ on:
   push:
     branches: 
       - master
-      - imgbot
   pull_request:
     types:
       - labeled
@@ -30,3 +29,6 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"
           MERGE_FILTER_AUTHOR: "imgbot"
+          MERGE_LABELS: ""
+          MERGE_FORKS: "false"
+          MERGE_DELETE_BRANCH: "true"
