@@ -1,7 +1,6 @@
 name: automerge
 on:
   workflow_dispatch:
-  inputs:
     name:
       description: '合并'
       required: false
