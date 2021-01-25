@@ -1,4 +1,4 @@
-name: Deploy Hexo Public To Pages
+name: Gallery
 
 on: 
   repository_dispatch:
@@ -39,10 +39,10 @@ jobs:
     - name: Generate
       run: |
         mkdir assets
-        mv -f /blog/* /assets
+        mv -f /blog/ /assets/
         npm run build
 
-    - name: Deploy Json To Branch Json
+    - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
